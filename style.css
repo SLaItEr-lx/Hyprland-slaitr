@@ -1,0 +1,216 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: Source Code Pro, Material Design Icons, "Font Awesome 6 Free";
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #fdffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+
+#workspaces button {
+    background: rgba(245, 255, 255, 0.5);
+    color: #1b1a1a;
+    border-radius: 20px;
+
+}
+
+#workspaces button:hover {
+    background: lightblue;
+    color: black;
+    border-bottom: 3px solid #1b1a1a;
+
+}
+
+#workspaces button.focused {
+    background: rgba(245, 255, 255, 0.5);
+}
+
+#workspaces button.focused:hover {
+    background: lightblue;
+    color: black;
+    border-bottom: 3px solid #1b1a1a;
+
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#mpd,
+#custom-weather,
+#taskbar,
+#tray,
+#idle_inhibitor,
+#mpd {
+    padding: 0 10px;
+    color: #1b1a1a;
+}
+
+#window,
+#workspaces {
+    margin: 0px 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0px;
+}
+
+#clock {
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+    color: rgba(0, 126, 0, 1);
+    border-radius: 0px 20px 20px 0px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #1b1a1a;
+        color: #000000;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#memory {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#disk {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#network {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#network.disconnected {
+    background-color: rgba(30, 30, 46, 0.6);
+    color: red;
+}
+
+#pulseaudio {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#pulseaudio.muted {
+    background-color: rgba(30, 30, 46, 0.6);
+    color: red;
+}
+
+#mpd {
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(62deg, rgba(245, 255, 255, 0.7) 0%, rgba(244, 229, 237, 0.9) 100%);
+    color: rgba(0, 0, 161, 1);
+    border-radius: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#custom-weather{
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+    font-size:13px;
+}
+
+#taskbar{
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(62deg, rgba(30, 30, 46, 0.3) 0%, rgba(250, 179, 135, 0.1) 100%);
+    border-radius: 0px 20px 20px 0px;
+}
+
+#temperature {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#temperature.critical {
+    color: #1b1a1a;
+    background: rgb(17,17,27);
+    background: radial-gradient(circle, rgba(30, 30, 46,0.6) 65%, rgba(235,77,75,0.5) 50%);
+}
+
+#tray {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    background-color: rgba(30, 30, 46, 0.6);
+    color: #1b1a1a;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(30, 30, 46, 0.6);
+    color: #1b1a1a;
+}
+
+#idle_inhibitor {
+    color: #1b1a1a;
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+#idle_inhibitor.activated {
+    color: rgba(166, 227, 161, 1);
+    background-color: rgba(245, 255, 255, 0.5);
+    background-image: linear-gradient(180deg, rgba(245, 255, 255, 0.7) 1%, rgba(244, 229, 237, 0.9) 90%);
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+tooltip {
+  background: rgba(252, 255, 255, 0.7);
+  border: 1px solid rgba(197, 235, 230, 0.9);
+}
+tooltip label {
+  color: #333436;
+}
